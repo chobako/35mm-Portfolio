@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<head>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+  <link rel="stylesheet" href="/Users/home/Desktop/portfolioSlide/index.css">
+  <script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+        var documentEl = $(document);
+        var fadeElem = $('.fade-scroll');
+        documentEl.on('scroll', function() {
+          var currScrollPos = documentEl.scrollTop();
+          fadeElem.each(function(){
+            var $this = $(this),
+                elemOffsetTop = $this.offset().top;
+            if (currScrollPos > elemOffsetTop) $this.css('opacity', 1 -(currScrollPos - elemOffsetTop)/400);
+          });
+        });
+      })
+    </script>
+
+  <!--  <script type="text/javascript">
+      $(window).on("load",function() {
+        $(window).scroll(function() {
+          var windowBottom = $(this).scrollTop() + $(this).innerHeight();
+          $(".fade-scroll").each(function() {
+        /* Check the location of each desired element */
+          var objectBottom = $(this).offset().top + $(this).outerHeight();
+
+        /* If the element is completely within bounds of the window, fade it in */
+          if (objectBottom < windowBottom) { //object comes into view (scrolling down)
+            if ($(this).css("opacity")==0) {$(this).fadeTo(500,1);}
+          } else { //object goes out of view (scrolling up)
+            if ($(this).css("opacity")==1) {$(this).fadeTo(500,0);}
+          }
+        });
+      }).scroll(); //invoke scroll-handler on page-load
+    });
+    </script>
+  </head> -->
+
+<script type="text/javascript">
+
+  $(document).ready(function(){
+
+    var slideWidth = '100vw';
+    var animationSpeed = 1000;
+    var pause = 3000;
+    var currentSlide = 1;
+
+    var $slider = $('#slider');
+    var $slideContainer = $slider.find('.slides');
+    var $slides = $slideContainer.find('.slide');
+    setInterval(function() {
+      $slideContainer.animate({'margin-left': '-='+slideWidth}, animationSpeed, function(){
+        currentSlide++;
+        if (currentSlide === $slides.length) {
+          currentSlide = 1;
+          $slideContainer.css('margin-left', 0);
+        };
+      });
+    }, pause);
+  });
+</script>
+<body>
+
+<h1 class="fade-scroll">
+This is a simply a collection</br>of analog images</br>of people that mean a lot to me</br>in moments I am fond of.</h1>
+<div id="slider">
+  <ul class="slides">
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img1.jpg" alt="img1"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img2.jpg" alt="img2"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img3.jpg" alt="img3"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img4.jpg" alt="img4"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img5.jpg" alt="img5"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img6.jpg" alt="img6"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img7.jpg" alt="img7"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img8.jpg" alt="img8"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img9.jpg" alt="img9"></li>
+    <li class="slide"><img src="/Users/home/Desktop/portfolioSlide/images/Photos/Img1.jpg" alt="img1"></li>
+  </ul>
+</div>
+
+</body>
