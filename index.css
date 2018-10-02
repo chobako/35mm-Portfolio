@@ -1,0 +1,46 @@
+body {
+  margin: 0px;
+  overflow-x: hidden;
+  background-color: #424242; }
+
+h1 {
+  font-family: open sans;
+  font-weight: 400;
+  font-size: 5vh;
+  line-height: 2;
+  color: white;
+  text-align: center;
+  position: relative;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  padding-top: 33vh;
+  padding-bottom: 33vh;
+  margin: 0px;
+  size: 30%;
+  background-color: #424242; }
+
+img {
+  width: 100vw;
+  height: auto;
+  margin: 0px;
+  padding: 0px; }
+
+#slider {
+  overflow: hidden;
+  width: 100vw;
+  height: auto; }
+
+#slider .slides {
+  margin: 0;
+  padding: 0;
+  width: 1000vw; }
+
+#slider .slide {
+  list-style-type: none;
+  width: 100vw;
+  height: auto;
+  float: left; }
+
+/*# sourceMappingURL=index.css.map */
